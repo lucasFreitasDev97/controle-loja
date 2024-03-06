@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('supplier_address', function (Blueprint $table) {
+        Schema::create('suppliers_adresses', function (Blueprint $table) {
             $table->id();
+            $table->string('country');
+            $table->string('state');
+            $table->string('city');
+            $table->string('address');
+            $table->string('number');
+            $table->string('zip_code');
             $table->foreignId('supplier_id')->constrained();
-            $table->foreignId('address_id')->constrained();
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('supplier_address');
+        Schema::dropIfExists('suppliers_adresses');
     }
 };
