@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('address');
             $table->string('number');
-            $table->string('zip_code');
+            $table->string('cnpj');
             $table->foreignId('supplier_id')->constrained();
             $table->timestamps();
         });
